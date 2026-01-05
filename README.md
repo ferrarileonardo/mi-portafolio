@@ -11,7 +11,8 @@ El sitio está diseñado para mostrar mis proyectos, experiencia y facilitar el 
 
 ## 🚀 Tecnologías utilizadas
 
-- Next.js v16.0.5  
+- Next.js v16.0.5
+- Node v20.19.6
 - React v19.2.0  
 - TailwindCSS v4.1.17  
 - TypeScript v5  
@@ -45,3 +46,4 @@ Cada tarjeta incluye nombre, descripción, tecnologías utilizadas y demo/reposi
 ```bash
 npm install
 npm run dev
+
