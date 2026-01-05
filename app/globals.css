@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
+/* Variables iniciales */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --color-background: #0a0a10; /* fondo oscuro por defecto */
+  --color-foreground: #ffffff; /* texto claro */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Modo claro automático */
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: #0a0a10; /* fondo claro */
+    --color-foreground: #1a1a1a; /* gris oscuro (no negro puro) */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* También puedes forzar modo oscuro con la clase .dark */
+.dark {
+  --color-background: #0a0a10;
+  --color-foreground: #ffffff;
+}
+
+/* Estilos base del body */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+/* Scrollbar personalizado */
+*::-webkit-scrollbar {
+  width: 2px;
+}
+*::-webkit-scrollbar-track {
+  background: #0a0a10;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #8000ffb9;
+}
+
+/* Clase para ocultar scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html {
+  scroll-behavior: smooth;
 }

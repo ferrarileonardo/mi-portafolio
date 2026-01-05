@@ -1,0 +1,24 @@
+HOLA MUNDO
+function TestDownload() {
+  return (
+    <a href="/cv.pdf" download>
+      DESCARGAR PDF
+    </a>
+  );
+}
+
+function TestDownload() {
+  return (
+    <a href="/cv.pdf" download>
+      DESCARGAR PDF
+    </a>
+  );
+}
+
+export default function Page() {
+  return (
+    <div>
+      <TestDownload />
+    </div>
+  );
+}

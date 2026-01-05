@@ -1,65 +1,100 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState("hero");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 } // 60% visible para marcar como activa
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+    return () => observer.disconnect();
+  }, []);
+
+  const handleNavigate = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="bg-background text-foreground font-sans min-h-screen flex flex-col">
+      {/* Navbar fijo arriba */}
+      <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
+
+      {/* Hero */}
+      <section id="hero" className="scroll-mt-32">
+        <Hero onNavigate={handleNavigate} />
+      </section>
+
+      {/* About */}
+      <About />
+
+     <section id="projects" className="scroll-mt-20 -mt-12 px-6 max-w-6xl mx-auto">
+  <Projects />
+</section>
+
+    
+
+        
+{/* Contact */}
+<section
+  id="contact"
+  className="scroll-mt-32 mt-32 py-32 px-6 max-w-6xl mx-auto"
+>
+  <h2 className="text-4xl font-bold text-purple-500 mb-6">Contacto</h2>
+  <p className="text-gray-300 mb-10">Informacion de mi Contacto </p>
+
+  <div>
+    <h3 className="text-lg font-semibold text-gray-300 mb-6">
+      Ponte en contacto
+    </h3>
+    <div className="space-y-4">
+      {/* Email */}
+      <p className="flex items-center gap-3 text-gray-400">
+        <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        leosenin.123@gmail.com
+      </p>
+
+      {/* Ubicación */}
+      <p className="flex items-center gap-3 text-gray-400">
+        <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        Caracas Avenida principal de La Carlota Edificio Arcorisa piso 2 apartamento 5.
+      </p>
+
+      {/* Teléfono */}
+      <p className="flex items-center gap-3 text-gray-400">
+        <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h2l3 7-1.5 1.5a11 11 0 005 5L13 16l7 3v2a2 2 0 01-2 2h-1c-9.94 0-18-8.06-18-18V3a2 2 0 012-2h2z" />
+        </svg>
+        04125546012
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
     </div>
   );
 }
