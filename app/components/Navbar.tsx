@@ -16,7 +16,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     <nav className="w-full fixed top-0 left-0 bg-background text-foreground shadow-md z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-purple-500 font-bold text-xl">LJ</div>
+        <div className="hidden md:block text-purple-500 font-bold text-xl">LJ</div>
 
         {/* Links */}
         <ul className="flex gap-8 font-medium mx-auto">
