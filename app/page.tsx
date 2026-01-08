@@ -53,7 +53,7 @@ export default function Home() {
 {/* Contact */}
 <section
   id="contact"
-  className="scroll-mt-60 mt-60 py-32 px-6 max-w-6xl mx-auto"
+  className="scroll-mt-67 mt-67 py-32 px-6 max-w-6xl mx-auto"
 >
   <h2 className="text-4xl font-bold text-purple-500 mb-6">Contacto</h2>
 
