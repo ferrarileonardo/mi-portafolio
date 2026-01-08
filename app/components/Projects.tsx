@@ -45,7 +45,7 @@ const projects = [
     color: "from-indigo-500 to-violet-600",
   },
   {
-    title: "Disruptive-media-test-ap",
+    title: "Disruptive-media-test-app",
     description:
       "Sistema de gestión multimedia con NestJS y Node.js. Arquitectura backend, entornos y despliegue en producción.",
     image: "/Images/project.jpg",

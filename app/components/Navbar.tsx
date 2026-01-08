@@ -24,12 +24,12 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     <nav className="w-full fixed top-0 left-0 bg-background text-foreground shadow-md z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        {/* Logo (oculto en móvil) */}
+        {/* Logo Desktop */}
         <div className="hidden md:block text-purple-500 font-bold text-xl">
           LJ
         </div>
 
-        {/* Botón hamburguesa (solo móvil) */}
+        {/* Botón hamburguesa */}
         <button
           className="md:hidden text-white text-2xl"
           onClick={() => setOpen(!open)}
@@ -62,9 +62,9 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
         </ul>
       </div>
 
-      {/* Menú móvil */}
+      {/* Menú móvil con fondo morado */}
       {open && (
-        <div className="md:hidden bg-background border-t border-gray-700">
+        <div className="md:hidden bg-purple-500/20 backdrop-blur-sm border-t border-purple-500/30">
           <ul className="flex flex-col gap-6 py-6 px-6 text-lg">
             <li>
               <button onClick={() => handleClick("hero")} className={linkClass("hero")}>

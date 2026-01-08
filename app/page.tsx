@@ -53,15 +53,12 @@ export default function Home() {
 {/* Contact */}
 <section
   id="contact"
-  className="scroll-mt-32 mt-32 py-32 px-6 max-w-6xl mx-auto"
+  className="scroll-mt-47 mt-47 py-32 px-6 max-w-6xl mx-auto"
 >
   <h2 className="text-4xl font-bold text-purple-500 mb-6">Contacto</h2>
-  <p className="text-gray-300 mb-10">Informacion de mi Contacto </p>
 
   <div>
-    <h3 className="text-lg font-semibold text-gray-300 mb-6">
-      Ponte en contacto
-    </h3>
+    
     <div className="space-y-4">
       {/* Email */}
       <p className="flex items-center gap-3 text-gray-400">

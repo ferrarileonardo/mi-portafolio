@@ -11,8 +11,8 @@ export default function Hero({ onNavigate }: HeroProps) {
         Hola, soy <span className="text-purple-500">Leonardo Jiménez</span>
       </h1>
       <p className="mt-6 text-lg max-w-xl text-center text-gray-300">
-      Soy ingeniero en informatica .Desarrollador Web Full‑Stack , apasionado por crear soluciones digitales 
-      que integren rendimiento y diseño.
+      Soy ingeniero en informática y desarrollador web Full‑Stack, apasionado por crear soluciones digitales que combinan rendimiento, estética y una excelente experiencia de usuario.
+
       </p>
       <div className="flex gap-4 mt-8 justify-center">
         <button
