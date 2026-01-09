@@ -50,7 +50,8 @@ export default function About() {
         <a
           href="/CV2.pdf"
           download="CV2.pdf"
-          className="border border-purple-500 text-purple-500 px-6 py-2 rounded hover:bg-purple-500 hover:text-white transition text-sm sm:text-base"
+          className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded hover:bg-purple-500 hover:text-white transition text-sm sm:text-base"
+
         >
           Descargar CV
         </a>
