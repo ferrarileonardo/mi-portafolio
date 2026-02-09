@@ -50,9 +50,8 @@ export default function About() {
         <a
           href="/CV2.pdf"
           download="CV2.pdf"
-          className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded hover:bg-purple-500 hover:text-white transition text-sm sm:text-base"
-
-        >
+          className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded hover:bg-purple-500 hover:text-white transition text-sm sm:text-base">
+            
           Descargar CV
         </a>
       </div>
@@ -60,8 +59,7 @@ export default function About() {
       {/* Skills */}
       <div className="mt-16 w-full">
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-500 mb-6">
-          Tecnologías que manejo
-        </h3>
+          Ecosistema Tecnico        </h3>
 
         <div className="flex flex-wrap gap-3 justify-center px-2">
           {[
@@ -69,7 +67,9 @@ export default function About() {
             "Node.js", "NestJS", "MongoDB", "PostgreSQL", "MySQL",
             "ExpoGo", "TailwindCSS", "Bootstrap", "HTML", "CSS",
             "GraphQL", "Laravel", "PHP", "Inertial.js",
-            "GitHub", "GitLab", "Bitbucket", "WordPress"
+            "GitHub", "GitLab", "Bitbucket", "WordPress" , 
+            "Gestion de Infraestructura y Despliegue ",
+            "Conocimiento solido en Arquitectura de Hardware gestion de Componentes(CPU,ram,Storage,PSU)",
           ].map((skill) => (
             <motion.span
               key={skill}
