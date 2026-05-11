@@ -53,8 +53,32 @@ const projects = [
     demoUrl: "#",
     githubUrl: "https://github.com/ferrarileonardo/disruptive-media-test-ap.git",
     color: "from-indigo-500 to-violet-600",
-  }
+  },
+
+  {
+  title: "Affiliate Engine – Shopify App + Pixel Tracking",
+  description:
+    "Aplicación embebida para Shopify con sistema de tracking avanzado mediante Web Pixels, backend en Node.js/Express, panel administrativo, eventos personalizados y facturación basada en uso. Incluye extensión de Pixel, API REST, dashboards y flujo completo de instalación OAuth.",
+  image: "/Images/project.jpg",
+  tags: [
+    "Shopify App",
+    "Web Pixels",
+    "Node.js",
+    "Express",
+    "React",
+    "Remix",
+    "Vite",
+    "TypeScript",
+    "Cloudflare Tunnel",
+    "Prisma",
+    "PostgreSQL"
+  ],
+  demoUrl: "#",
+  githubUrl: "https://github.com/ferrarileonardo/affiliate-engine", 
+  color: "from-rose-500 to-red-600",
+}
 ];
+
 
 export default function Projects() {
   return (
