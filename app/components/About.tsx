@@ -66,7 +66,7 @@ export default function About() {
             "React.js", "ReactNative", "Next.js", "TypeScript", "JavaScript",
             "Node.js", "NestJS", "MongoDB", "PostgreSQL", "MySQL",
             "ExpoGo", "TailwindCSS", "Bootstrap", "HTML", "CSS",
-            "GraphQL", "Laravel", "PHP", "Inertial.js",
+            "GraphQL", "Laravel", "PHP", "Inertial.js","Angular",
             "GitHub", "GitLab", "Bitbucket", "WordPress" , 
             "Gestion de Infraestructura y Despliegue ",
             "Conocimiento solido en Arquitectura de Hardware gestion de Componentes(CPU,ram,Storage,PSU)",
